@@ -1,0 +1,316 @@
+// Define common variables
+$primary-color: #243b2d; // Updated to a vibrant color
+$primary-color-hover: #2ddf7d;
+$secondary-color: #1db954;
+$white-color: #fff;
+$black-opacity: rgba(0, 0, 0, 0.5);
+$black-opacity-hover: rgba(0, 0, 0, 0.8);
+$text-shadow: rgba(0, 0, 0, 0.7);
+$transition-speed: 0.4s;
+$transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$font-family: 'Poppins', sans-serif; // Modern, sleek font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+// General Slider Styling
+.carousel {
+  .carousel-inner {
+    position: relative;
+  }
+
+  .slider-image {
+    height: 600px;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+    
+    @media (max-width: 768px) {
+      height: 400px;
+    }
+    
+    @media (max-width: 576px) {
+      height: 300px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .slider-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    right: 5%;
+    color: white;
+    text-align: left;
+    z-index: 2;
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap');
+
+    // Heading Styles (h3)
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif; // Elegant, serif font for a premium feel
+      color: #f1efef; // Dark gray for a professional, clean look
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1); // Subtle shadow for depth and readability
+      transition: all 0.3s ease-in-out; // Smooth transitions for hover effects
+    
+      &:hover {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); // Slight shadow enhancement on hover
+      }
+    
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    
+      @media (max-width: 576px) {
+        font-size: 1.5rem;
+      }
+    }
+    
+    // Paragraph Styles (p)
+    p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: 'Roboto', sans-serif; // Clean, modern sans-serif font for body text
+      color: #e0dcdc; // Slightly lighter gray for good readability
+      line-height: 1.8;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); // Very light shadow to add subtle depth
+      transition: all 0.3s ease;
+    
+      &:hover {
+        color: #333; // Darken the text slightly on hover for interaction
+      }
+    
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    
+      @media (max-width: 576px) {
+        font-size: 0.9rem;
+      }
+    }
+    
+    
+  }
+
+  // Custom Prev and Next Buttons
+  .custom-prev-icon,
+  .custom-next-icon {
+    font-size: 3rem;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(236, 234, 234, 0.5);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .custom-prev-icon {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    z-index: 3;
+    transform: translateY(-50%);
+  }
+
+  .custom-next-icon {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    z-index: 3;
+    transform: translateY(-50%);
+  }
+
+  // Adding an overlay to make text stand out
+  .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+}
+
+
+
+/* GENERAL SETTINGS START */
+$primaryColor: #155238; // Orange
+$secondaryColor: #111111; // Black
+$tertiaryColor: #030303; // Light Pink
+$quaternaryColor: #ffffff; // White
+$quinaryColor: #fcf8f8; // Light shade for text or backgrounds
+$hoverGreenColor: #28a745; // New Green Color for hover
+
+.primary-color { color: $primaryColor; }
+.secondary-color { color: $secondaryColor; }
+.tertiary-color { color: $tertiaryColor; }
+.quaternary-color { color: $quaternaryColor; }
+.quinary-color { color: $quinaryColor; }
+
+.primary-bg-color { background-color: $primaryColor; }
+.secondary-bg-color { background-color: $secondaryColor; }
+.tertiary-bg-color { background-color: $tertiaryColor; }
+.quaternary-bg-color { background-color: $quaternaryColor; }
+.quinary-bg-color { background-color: $quinaryColor; }
+
+/* HEADER START */
+header#header > .header-line-2 {
+    background-color: $primaryColor;
+    padding: 10px 20px;
+}
+
+header#header > .header-line-2 .header-line-2-icon {
+    margin-top: -3px;
+}
+
+header.admin-header .navbar-expand-lg .navbar-nav .nav-link {
+    color: $secondaryColor; // Orange text
+    transition: color 0.6s; // Add a transition for smooth effect
+}
+
+header.admin-header .navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: $hoverGreenColor; // Change hover to green
+}
+
+header.admin-header .dropdown-item.active, .dropdown-item:active {
+    color: $tertiaryColor;
+    background-color: #ebe9e9;
+}
+/* HEADER END */
+
+
+
+  
+
+/* ABOUT SECTION START */
+#about-section .readmore-btn {
+    background-color: $primaryColor;
+    border-radius: 5px;
+    color: $quinaryColor;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+#about-section .readmore-btn:hover {
+    background-color: $tertiaryColor;
+}
+/* ABOUT SECTION END */
+
+/* CAR SEARCH START */
+#car-search {
+    background-color: $tertiaryColor;
+    border-radius: 5px;
+    padding: 15px;
+}
+#car-search .search-btn {
+    background-color: $primaryColor;
+    color: $quinaryColor;
+    text-transform: uppercase;
+    border: 0;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+#car-search a:not([disabled]) .search-btn:hover {
+    color: $tertiaryColor;
+    background-color: $quinaryColor;
+}
+/* CAR SEARCH END */
+
+/* CAR OFFERS START */
+#car-offers .gallery-box {
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#car-offers .gallery-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#car-offers .rent-now-button:hover {
+    color: $quaternaryColor; // White
+    background-color: $hoverGreenColor; // Apply green hover color
+}
+
+/* CAR OFFERS END */
+
+/* FEATURES SECTION START */
+#features-section {
+    background-color: $tertiaryColor;
+    padding: 30px;
+    border-radius: 5px;
+}
+/* FEATURES SECTION END */
+
+/* CONTACT SECTION START */
+/* CONTACT SECTION END */
+
+/* FOOTER START */
+#footer .social-icon {
+    padding: 20px 0;
+}
+#footer .social-icon ul {
+    list-style: none;
+    padding: 0;
+}
+#footer .social-icon ul li {
+    float: left;
+    margin: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+#footer .social-icon ul li:hover {
+    transform: scale(1.1);
+}
+
+#footer .social-icon ul li a {
+    font-size: 20px;
+    color: $secondaryColor; // Ensure icons are visible
+}
+#footer .social-icon ul li a svg {
+    margin-top: -3px;
+}
+/* FOOTER END */
+
+/* MY RENTALS START */
+#my-rentals {
+    clear: both;
+}
+/* MY RENTALS END */
+
+.react-select .select__control {
+    border-radius: 0 5px 5px 0;
+}
+.recaptcha > div > div {
+    margin: auto;
+}
+
+header.admin-header .navbar-expand-lg .navbar-nav .nav-link {
+    color: $primaryColor;
+}
+header.admin-header .dropdown-item.active, .dropdown-item:active {
+    color: $tertiaryColor;
+    background-color: #ffffff;
+}
